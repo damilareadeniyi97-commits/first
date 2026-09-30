@@ -1,0 +1,754 @@
+/*colors l 24A058 d #1B7641*/
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+/* Responsive layout - when the screen is less than 700px wide */
+@media screen and (max-width: 900px) {
+  /* 1. Stack the sidebar and main body vertically */
+  .layout {
+    flex-direction: column;
+  }
+
+  /* 2. Make the sidebar full width and reset fixed height */
+  .overflow {
+    width: 100%;
+    height: auto;
+    max-height: 400px; /* lets it scroll internally without breaking page flow */
+    margin-top: 15px;
+  }
+
+  /* 3. Make main content take full width without massive desktop margins */
+  .body {
+    margin: 15px 0;
+    padding: 15px;
+  }
+
+  /* 4. Allow navigation bar to wrap properly on mobile */
+  .nav-list {
+    align-items: stretch;
+  }
+
+  .nav-brand {
+    padding: 12px;
+    text-align: center;
+  }
+
+  .nav-item a, 
+  li a, 
+  .dropbtn {
+    padding: 10px 15px;
+    text-align: center;
+  }
+
+  /* 5. Mobile readable hero & font adjustments */
+  .content {
+    padding: 0 15px;
+  }
+
+  .table {
+    margin: 15px 0;
+    padding: 15px;
+  }
+
+  
+}
+
+
+text{
+  color: #24A058;
+  background-color: #1B7641;
+}
+
+/* Section wrapper */
+.section {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Container sizing and context */
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Background video styling */
+.background-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+/* Semi-transparent overlay to ensure text readability */
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 2;
+}
+
+/* Content layer */
+.content {
+  position: relative;
+  z-index: 3;
+  color: #ffffff;
+  text-align: center;
+  padding: 0 20px;
+}
+
+/* ===== NAVIGATION ===== */
+.nav-list {
+  background-color: #1B7641;
+  color: white;
+  display: flex;
+  position: sticky;
+  top: 0px;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style-type: none;
+  z-index: 100;
+  align-items: center;
+}
+
+.nav-brand {
+  color: white;
+  padding: 20px 70px 20px 20px;
+  font-weight: bold;
+  font-size: 30px;
+  display: block;
+}
+
+.nav-item {
+  display: block;
+  font-size: 25px;
+}
+
+.nav-item a {
+  text-decoration: none;
+  color: white;
+  padding: 20px;
+  display: block;
+}
+
+.nav-item:hover {
+  background-color: #ecf0f1;
+  border-radius: 10px;
+}
+
+.nav-item a:hover {
+  color: #1B7641;
+}
+
+/* ===== DROPDOWN ===== */
+li a, .dropbtn {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  padding: 20px;
+}
+
+li.dropdown {
+  display: inline-block;
+  position: relative;
+  font-size: 25px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #1B7641;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+  top: 100%;
+  left: 0;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #27ae60;
+  color: white;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #ecf0f1;
+  border-radius: 10px;
+  color: #1B7641;
+}
+
+.layout{
+  display: flex;
+}
+
+.overflow {
+  width: 250px;
+  flex-shrink: 0;
+  height: 900px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  margin-top: 30px;
+}
+
+.overflow h3{
+  text-align: center;
+  font-size: larger;
+}
+
+.ftext1{
+  padding-left: 20px;
+  color: white;
+  box-shadow: white;
+}
+
+.flex01 {
+  width: 200px;
+  min-height: 100px;
+  border: none;
+  border-radius: 5px;
+  background-image: url("Gemini_Generated_Image_jh017yjh017yjh01.jpg");
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+  /* Fits the entire box nicely */
+  background-size: cover;       /* Scales image to cover container */
+  background-position: center;  /* Centers the focus */
+  background-repeat: no-repeat; /* Prevents tiling */
+
+  /* Smoothly animates both the transform and the shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  /* Prevents jittery sub-pixel edges during scaling */
+  will-change: transform;
+}
+
+.flex01:hover {
+  /* Scales up slightly and lifts up 4px */
+  transform: scale(1.05) translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.447);
+}
+
+.flex2{
+  background-image: url(Gemini_Generated_Image_e5zru7e5zru7e5zr.jpg);
+  width: 200px;
+  min-height: 100px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+  /* Fits the entire box nicely */
+  background-size: cover;       /* Scales image to cover container */
+  background-position: center;  /* Centers the focus */
+  background-repeat: no-repeat; /* Prevents tiling */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform;
+}
+
+.flex2:hover{
+  transform: scale(1.05) translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.447);
+}
+
+.flex3{
+  background-image: url(Gemini_Generated_Image_y0309xy0309xy030.jpg);
+  width: 200px;
+  min-height: 100px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+  /* Fits the entire box nicely */
+  background-size: cover;       /* Scales image to cover container */
+  background-position: center;  /* Centers the focus */
+  background-repeat: no-repeat; /* Prevents tiling */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform;
+}
+
+.flex3:hover{
+  transform: scale(1.05) translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.447);
+}
+
+.flex4{
+  background-image: url(Gemini_Generated_Image_mcx3wsmcx3wsmcx3.jpg);
+  width: 200px;
+  min-height: 100px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+  /* Fits the entire box nicely */
+  background-size: cover;       /* Scales image to cover container */
+  background-position: center;  /* Centers the focus */
+  background-repeat: no-repeat; /* Prevents tiling */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform;
+}
+
+.flex4:hover{
+  transform: scale(1.05) translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.447);
+}
+.flex5{
+  background-image: url(Gemini_Generated_Image_5n1ns15n1ns15n1n.png);
+  width: 200px;
+  min-height: 100px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+  /* Fits the entire box nicely */
+  background-size: cover;       /* Scales image to cover container */
+  background-position: center;  /* Centers the focus */
+  background-repeat: no-repeat; /* Prevents tiling */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform;
+}
+
+.flex5:hover{
+  transform: scale(1.05) translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.447);
+}
+
+.flex6{
+  background-image: url(Gemini_Generated_Image_c4o65jc4o65jc4o6.jpg);
+  width: 200px;
+  min-height: 100px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+  /* Fits the entire box nicely */
+  background-size: cover;       /* Scales image to cover container */
+  background-position: center;  /* Centers the focus */
+  background-repeat: no-repeat; /* Prevents tiling */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform;
+}
+
+.flex6:hover{
+  transform: scale(1.05) translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.447);
+}
+
+.flex7{
+  background-image: url(Gemini_Generated_Image_tzh5h3tzh5h3tzh5.jpg);
+  width: 200px;
+  min-height: 100px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+  /* Fits the entire box nicely */
+  background-size: cover;       /* Scales image to cover container */
+  background-position: center;  /* Centers the focus */
+  background-repeat: no-repeat; /* Prevents tiling */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform;
+}
+
+.flex7:hover{
+  transform: scale(1.05) translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.447);
+}
+
+.flex8{
+  background-image: url(Gemini_Generated_Image_f3cbt9f3cbt9f3cb.jpg);
+  width: 200px;
+  min-height: 100px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+  /* Fits the entire box nicely */
+  background-size: cover;       /* Scales image to cover container */
+  background-position: center;  /* Centers the focus */
+  background-repeat: no-repeat; /* Prevents tiling */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform;
+}
+
+.flex8:hover{
+  transform: scale(1.05) translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.447);
+}
+
+.flex9{
+  background-image: url(Gemini_Generated_Image_lvfa3hlvfa3hlvfa.jpg);
+  width: 200px;
+  min-height: 100px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+  /* Fits the entire box nicely */
+  background-size: cover;       /* Scales image to cover container */
+  background-position: center;  /* Centers the focus */
+  background-repeat: no-repeat; /* Prevents tiling */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform;
+}
+
+.flex9:hover{
+  transform: scale(1.05) translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.447);
+}
+
+.flex10{
+  background-image: url(Gemini_Generated_Image_4bcuce4bcuce4bcu.jpg);
+  width: 200px;
+  min-height: 100px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+  /* Fits the entire box nicely */
+  background-size: cover;       /* Scales image to cover container */
+  background-position: center;  /* Centers the focus */
+  background-repeat: no-repeat; /* Prevents tiling */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform;
+}
+
+.flex10:hover{
+  transform: scale(1.05) translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.447);
+}
+
+.flex11{
+  background-image: url(Gemini_Generated_Image_xfbo92xfbo92xfbo.jpg);
+  width: 200px;
+  min-height: 100px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+  /* Fits the entire box nicely */
+  background-size: cover;       /* Scales image to cover container */
+  background-position: center;  /* Centers the focus */
+  background-repeat: no-repeat; /* Prevents tiling */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform;
+}
+
+.flex11:hover{
+  transform: scale(1.05) translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.447);
+}
+
+.flex12{
+  background-image: url(Gemini_Generated_Image_hvw9tthvw9tthvw9.jpg);
+  width: 200px;
+  min-height: 100px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+  /* Fits the entire box nicely */
+  background-size: cover;       /* Scales image to cover container */
+  background-position: center;  /* Centers the focus */
+  background-repeat: no-repeat; /* Prevents tiling */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform;
+}
+
+.flex12:hover{
+  transform: scale(1.05) translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.447);
+}
+
+.flex13{
+  background-image: url(Gemini_Generated_Image_j0kk8sj0kk8sj0kk.jpg);
+  width: 200px;
+  min-height: 100px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+  /* Fits the entire box nicely */
+  background-size: cover;       /* Scales image to cover container */
+  background-position: center;  /* Centers the focus */
+  background-repeat: no-repeat; /* Prevents tiling */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform;
+}
+
+.flex13:hover{
+  transform: scale(1.05) translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.447);
+}
+
+.flex14{
+  background-image: url(Gemini_Generated_Image_r1jw3tr1jw3tr1jw.jpg);
+  width: 200px;
+  min-height: 100px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+  /* Fits the entire box nicely */
+  background-size: cover;       /* Scales image to cover container */
+  background-position: center;  /* Centers the focus */
+  background-repeat: no-repeat; /* Prevents tiling */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform;
+}
+
+.flex14:hover{
+  transform: scale(1.05) translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.447);
+}
+
+.flex15{
+  background-image: url(Gemini_Generated_Image_joz1p4joz1p4joz1.jpg);
+  width: 200px;
+  min-height: 100px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+  /* Fits the entire box nicely */
+  background-size: cover;       /* Scales image to cover container */
+  background-position: center;  /* Centers the focus */
+  background-repeat: no-repeat; /* Prevents tiling */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform;
+}
+
+.flex15:hover{
+  transform: scale(1.05) translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.447);
+}
+
+.flex16{
+  background-image: url(Gemini_Generated_Image_x6fuiox6fuiox6fu.jpg);
+  width: 200px;
+  min-height: 100px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+  /* Fits the entire box nicely */
+  background-size: cover;       /* Scales image to cover container */
+  background-position: center;  /* Centers the focus */
+  background-repeat: no-repeat; /* Prevents tiling */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform;
+}
+
+.flex16:hover{
+  transform: scale(1.05) translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.447);
+}
+
+.flex17{
+  background-image: url(Gemini_Generated_Image_33a5xc33a5xc33a5.jpg);
+  width: 200px;
+  min-height: 100px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+  /* Fits the entire box nicely */
+  background-size: cover;       /* Scales image to cover container */
+  background-position: center;  /* Centers the focus */
+  background-repeat: no-repeat; /* Prevents tiling */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform;
+}
+
+.flex17:hover{
+  transform: scale(1.05) translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.447);
+}
+
+.flex18{
+  background-image: url(Gemini_Generated_Image_riacr1riacr1riac.jpg);
+  width: 200px;
+  min-height: 100px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+  /* Fits the entire box nicely */
+  background-size: cover;       /* Scales image to cover container */
+  background-position: center;  /* Centers the focus */
+  background-repeat: no-repeat; /* Prevents tiling */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform;
+}
+
+.flex18:hover{
+  transform: scale(1.05) translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.447);
+}
+
+.flex19{
+  background-image: url(Gemini_Generated_Image_cvadh7cvadh7cvad.jpg);
+  width: 200px;
+  min-height: 100px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+  /* Fits the entire box nicely */
+  background-size: cover;       /* Scales image to cover container */
+  background-position: center;  /* Centers the focus */
+  background-repeat: no-repeat; /* Prevents tiling */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform;
+}
+
+.flex19:hover{
+  transform: scale(1.05) translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.447);
+}
+
+.flex20{
+  width: 100px;
+  background-image: url(Gemini_Generated_Image_p9i7typ9i7typ9i7.jpg);
+  width: 200px;
+  min-height: 100px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+  /* Fits the entire box nicely */
+  background-size: cover;       /* Scales image to cover container */
+  background-position: center;  /* Centers the focus */
+  background-repeat: no-repeat; /* Prevents tiling */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform;
+}
+
+.flex20:hover{
+  transform: scale(1.05) translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.447);
+}
+
+.body{
+  border: none;
+  border-radius: 5px;
+  font-size: 200%;
+  padding: 30px;
+  margin: 5%;
+  background-color: rgba(0, 0, 0, 0.175);
+}
+
+.table{
+  border: none;
+  border-radius: 5px;
+  padding: 30px;
+  margin: 5%;
+  background-color: rgba(0, 0, 0, 0.175);
+}
+
+.table h3{
+  text-align: center;
+  font-size: 50px;
+}
+
+/*                chaper                    */
+/* Links */
+.Chapter a {
+  text-decoration: none;
+  list-style-type: none;
+  color: inherit;
+}
+
+ /* Centers cards inside the web page frame and wraps them nicely */
+.Chapter {  
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+gap: 20px;
+max-width: 1200px;
+margin: 0 auto;
+}
+
+.Chapter a {
+text-decoration: none;
+color: inherit;
+display: block;
+width: 100%;
+height: 100%;
+}
+
+    /* Card container */
+    .flex1 {
+      position: relative;        /* Required for putting text on top */
+      width: 260px;
+      height: 160px;
+      border-radius: 12px;
+      overflow: hidden;          /* Keeps image and overlay within rounded corners */
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+      background-color: #1B7641;
+      transition: transform 0.2s ease;
+    }
+
+    .flex1:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.959);
+    }
+
+    /* Image fills the entire card */
+    .flex1 img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Text overlay on top of the image */
+    .ftext {
+      position: absolute;        /* Places text directly on the image */
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 12px;
+      background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
+      text-align: center;
+      color: white;
+    }
+
+    .ftext h4 {
+      font-size: 24px;
+      color: #86efac;
+      margin-bottom: 3px;
+    }
+
+/* ===== footer ===== */
+.footer {
+  background-color: #1B7641;
+  color: white;
+  display: flex;
+  position: sticky;
+  top: 0px;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style-type: none;
+  z-index: 100;
+  align-items: center;
+}
+
+.footer-brand {
+  padding: 20px 20px 20px 50px;
+  font-weight: bold;
+  display: block;
+}
+
+.footer-item {
+  text-decoration: none;
+  color: white;
+  padding: 20px;
+  display: block;
+}
